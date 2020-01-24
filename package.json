@@ -1,0 +1,15 @@
+{
+  "name": "CursoEs6",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Vitor Miranda <vitortcmout@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.8.3",
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3"
+  },
+  "scripts": {
+    "dev" : "babel ./main.js -o ./bundle.js"
+  }
+}
