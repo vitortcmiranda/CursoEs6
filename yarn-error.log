@@ -2,7 +2,7 @@ Arguments:
   C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js init
 
 PATH: 
-  C:\Users\vitor\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\vitor\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Program Files (x86)\Yarn\bin;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin;C:\Users\vitor\AppData\Local\Microsoft\WindowsApps;C:\Users\vitor\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\vitor\AppData\Roaming\npm;C:\Users\vitor\AppData\Local\Yarn\bin;C:\Users\vitor\AppData\Local\GitHubDesktop\bin;C:\Users\vitor\AppData\Roaming\Composer\vendor\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+  C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\vitor\AppData\Local\Microsoft\WindowsApps;C:\Users\vitor\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\vitor\AppData\Roaming\npm;C:\Users\vitor\AppData\Local\Yarn\bin;C:\Users\vitor\AppData\Local\GitHubDesktop\bin;C:\Users\vitor\AppData\Roaming\Composer\vendor\bin
 
 Yarn version: 
   1.21.1
@@ -14,12 +14,17 @@ Platform:
   win32 x64
 
 Trace: 
-  SyntaxError: D:\ProjetosGit\CursoEs6\package.json: Unexpected string in JSON at position 258
-      at JSON.parse (<anonymous>)
-      at C:\Program Files (x86)\Yarn\lib\cli.js:1625:59
-      at Generator.next (<anonymous>)
-      at step (C:\Program Files (x86)\Yarn\lib\cli.js:310:30)
-      at C:\Program Files (x86)\Yarn\lib\cli.js:321:13
+  Error: canceled
+      at Interface.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:136925:13)
+      at Interface.emit (events.js:210:5)
+      at Interface._ttyWrite (readline.js:887:16)
+      at ReadStream.onkeypress (readline.js:191:10)
+      at ReadStream.emit (events.js:210:5)
+      at emitKeys (internal/readline/utils.js:433:14)
+      at emitKeys.next (<anonymous>)
+      at ReadStream.onData (readline.js:1153:36)
+      at ReadStream.emit (events.js:210:5)
+      at addChunk (_stream_readable.js:309:12)
 
 npm manifest: 
   {
@@ -32,9 +37,9 @@ npm manifest:
       "@babel/cli": "^7.8.3",
       "@babel/core": "^7.8.3",
       "@babel/preset-env": "^7.8.3"
-    }
+    },
     "scripts": {
-      "dev": "babel ./main.js -o ./bundle.js"
+      "dev" : "babel ./main.js -o ./bundle.js -w"
     }
   }
 

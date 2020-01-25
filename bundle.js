@@ -18,57 +18,47 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var List =
+var Usuario =
 /*#__PURE__*/
 function () {
-  function List() {
-    _classCallCheck(this, List);
+  function Usuario(email, senha) {
+    var admin = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
 
-    this.data = [];
+    _classCallCheck(this, Usuario);
+
+    this.usuario = {
+      email: email,
+      senha: senha,
+      admin: admin
+    };
   }
 
-  _createClass(List, [{
-    key: "add",
-    value: function add(data) {
-      this.data.push(data);
-      console.log(this.data);
+  _createClass(Usuario, [{
+    key: "isAdmin",
+    value: function isAdmin() {
+      return this.usuario.admin ? true : false;
     }
   }]);
 
-  return List;
+  return Usuario;
 }();
 
-var ToDoList =
+var Admin =
 /*#__PURE__*/
-function (_List) {
-  _inherits(ToDoList, _List);
+function (_Usuario) {
+  _inherits(Admin, _Usuario);
 
-  function ToDoList() {
-    var _this;
+  function Admin(email, senha) {
+    _classCallCheck(this, Admin);
 
-    _classCallCheck(this, ToDoList);
-
-    //chamando o método constructor da classe pai com a propriedade super()
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(ToDoList).call(this));
-    _this.usuario = 'Vitor';
-    _this.idade = '24';
-    return _this;
+    return _possibleConstructorReturn(this, _getPrototypeOf(Admin).call(this, email, senha, true));
   }
 
-  _createClass(ToDoList, [{
-    key: "mostraUsuario",
-    value: function mostraUsuario() {
-      console.log(this.usuario);
-    }
-  }]);
+  return Admin;
+}(Usuario);
 
-  return ToDoList;
-}(List);
+var User1 = new Usuario('email@teste.com', 'senha123');
+var Adm1 = new Admin('email@teste.com', 'senha123');
+console.log(User1.isAdmin()); // false
 
-var MinhaLista = new ToDoList();
-
-document.getElementById('novotodo').onclick = function () {
-  MinhaLista.add('a');
-};
-
-MinhaLista.mostraUsuario();
+console.log(Adm1.isAdmin()); // true

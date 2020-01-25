@@ -1,30 +1,24 @@
-class List {
-
-    constructor(){
-        this.data= [];
+class Usuario {
+    constructor(email,senha,admin = false){
+        this.usuario = {
+            email :email,
+            senha : senha,
+            admin : admin
+        }
     }
-    add(data){
-        this.data.push(data);
-        console.log(this.data);
+    isAdmin(){
+       return this.usuario.admin ?  true :  false
     }
 }
 
-class ToDoList extends List {
-   constructor(){
-       //chamando o método constructor da classe pai com a propriedade super()
-       super();
-       this.usuario ='Vitor';
-       this.idade ='24';
-   }
-   mostraUsuario(){
-       console.log(this.usuario);
-   }
+class Admin extends Usuario{
+    constructor(email,senha){
+        super(email,senha,true);
+    }
 }
 
-const MinhaLista = new ToDoList();
+const User1 = new Usuario('email@teste.com', 'senha123');
+const Adm1 = new Admin('email@teste.com', 'senha123');
 
-document.getElementById('novotodo').onclick = function(){
-    MinhaLista.add('a');
-}
-
-MinhaLista.mostraUsuario();
+console.log(User1.isAdmin()) // false
+console.log(Adm1.isAdmin()) // true
