@@ -1,24 +1,22 @@
-class Usuario {
-    constructor(email,senha,admin = false){
-        this.usuario = {
-            email :email,
-            senha : senha,
-            admin : admin
-        }
-    }
-    isAdmin(){
-       return this.usuario.admin ?  true :  false
-    }
-}
+const usuarios = [
+    { nome: 'Diego', idade: 23, empresa: 'Rocketseat' },
+    { nome: 'Gabriel', idade: 15, empresa: 'Rocketseat' },
+    { nome: 'Lucas', idade: 30, empresa: 'Facebook' },
+   ];
+   
+   const UtilizandoMap = usuarios.map(function(item,index){
+        return usuarios[index].idade;
+   });
 
-class Admin extends Usuario{
-    constructor(email,senha){
-        super(email,senha,true);
-    }
-}
+   const filter = usuarios.filter(function(item,index){
+        return usuarios[index].idade > 18;
+   });
+   
+   const find = usuarios.find(function(item,index){
+    return usuarios[index].empresa === 'Google';
+   });
 
-const User1 = new Usuario('email@teste.com', 'senha123');
-const Adm1 = new Admin('email@teste.com', 'senha123');
-
-console.log(User1.isAdmin()) // false
-console.log(Adm1.isAdmin()) // true
+   const multiplincando =
+   console.log('Utilizando Map',UtilizandoMap); 
+   console.log('Utilizando filter',filter);
+   console.log('Utilizando find',find);
