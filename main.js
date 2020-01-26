@@ -1,21 +1,28 @@
-const usuarios = [
-    { nome: 'Diego', idade: 23, empresa: 'Rocketseat' },
-    { nome: 'Gabriel', idade: 15, empresa: 'Rocketseat' },
-    { nome: 'Lucas', idade: 30, empresa: 'Facebook' },
-   ];
-   
-   const UtilizandoMap = usuarios.map(usuarios => usuarios.idade);
+// 3.1
+const arr = [1, 2, 3, 4, 5];
+arr.map(function(item) {
+ return item + 10;
+});
 
-   const filter = usuarios.filter(usuarios => usuarios.idade > 18);
-   
-   const find = usuarios.find(usuarios => usuarios.empresa ==='Google');
+const map = arr.map(item => item  +10);
+console.log(map);
+// 3.2
+// Dica: Utilize uma constante pra function
+const usuario = { nome: 'Diego', idade: 23 };
 
-   const multiplincando = usuarios.map(usuarios => usuarios.idade *2);
-   const filterm = multiplincando.filter(multiplincando => multiplincando < 50);
+const showidade = (usuario) =>{console.log(usuario.idade)}
+showidade(usuario);
+// 3.3
+// Dica: Utilize uma constante pra function
+const nome = "Diego";
+const idade = 23;
 
-
-   console.log('Utilizando Map',UtilizandoMap); 
-   console.log('Utilizando filter',filter);
-   console.log('Utilizando find',find);
-   console.log('Utilizando mu',multiplincando);
-   console.log('Utilizando mu',filterm);
+const mostraUsuario = (nome = 'Diego', idade = 18) => { console.log(nome,idade)};
+mostraUsuario(nome, idade);
+mostraUsuario(nome);
+// 3.4
+const promise = function() {
+ return new Promise(function(resolve, reject) {
+ return resolve();
+ })
+}

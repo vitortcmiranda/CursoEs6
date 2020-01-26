@@ -1,35 +1,42 @@
 "use strict";
 
-var usuarios = [{
+// 3.1
+var arr = [1, 2, 3, 4, 5];
+arr.map(function (item) {
+  return item + 10;
+});
+var map = arr.map(function (item) {
+  return item + 10;
+});
+console.log(map); // 3.2
+// Dica: Utilize uma constante pra function
+
+var usuario = {
   nome: 'Diego',
-  idade: 23,
-  empresa: 'Rocketseat'
-}, {
-  nome: 'Gabriel',
-  idade: 15,
-  empresa: 'Rocketseat'
-}, {
-  nome: 'Lucas',
-  idade: 30,
-  empresa: 'Facebook'
-}];
-var UtilizandoMap = usuarios.map(function (usuarios) {
-  return usuarios.idade;
-});
-var filter = usuarios.filter(function (usuarios) {
-  return usuarios.idade > 18;
-});
-var find = usuarios.find(function (usuarios) {
-  return usuarios.empresa === 'Google';
-});
-var multiplincando = usuarios.map(function (usuarios) {
-  return usuarios.idade * 2;
-});
-var filterm = multiplincando.filter(function (multiplincando) {
-  return multiplincando < 50;
-});
-console.log('Utilizando Map', UtilizandoMap);
-console.log('Utilizando filter', filter);
-console.log('Utilizando find', find);
-console.log('Utilizando mu', multiplincando);
-console.log('Utilizando mu', filterm);
+  idade: 23
+};
+
+var showidade = function showidade(usuario) {
+  console.log(usuario.idade);
+};
+
+showidade(usuario); // 3.3
+// Dica: Utilize uma constante pra function
+
+var nome = "Diego";
+var idade = 23;
+
+var mostraUsuario = function mostraUsuario() {
+  var nome = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Diego';
+  var idade = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 18;
+  console.log(nome, idade);
+};
+
+mostraUsuario(nome, idade);
+mostraUsuario(nome); // 3.4
+
+var promise = function promise() {
+  return new Promise(function (resolve, reject) {
+    return resolve();
+  });
+};
