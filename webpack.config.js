@@ -1,7 +1,10 @@
 module.exports = {
-entry: './main.js',
+entry: './src/main.js',
 resolve: {
 extensions: ['.webpack.js', '.web.js', '.ts', '.js']
+},
+devServer: {
+    contentBase: __dirname+'/public'
 },
 module: {
 rules: [
@@ -14,7 +17,7 @@ rules: [
 ]
 },
 output: {
-path: __dirname,    
+path: __dirname + '/public',    
 filename: './bundle.js',
 }
 };
