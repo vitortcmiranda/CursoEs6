@@ -1,42 +1,21 @@
 "use strict";
 
-// 3.1
-var arr = [1, 2, 3, 4, 5];
-arr.map(function (item) {
-  return item + 10;
-});
-var map = arr.map(function (item) {
-  return item + 10;
-});
-console.log(map); // 3.2
-// Dica: Utilize uma constante pra function
+function mostraInfo(usuario) {
+  return "".concat(usuario.nome, " tem ").concat(usuario.idade, " anos.");
+}
 
-var usuario = {
+mostraInfo({
   nome: 'Diego',
   idade: 23
-};
+});
 
-var showidade = function showidade(usuario) {
-  console.log(usuario.idade);
-};
+function mostraInfos(_ref) {
+  var nome = _ref.nome,
+      idade = _ref.idade;
+  console.log(nome + ' tem ' + idade + ' anos.');
+}
 
-showidade(usuario); // 3.3
-// Dica: Utilize uma constante pra function
-
-var nome = "Diego";
-var idade = 23;
-
-var mostraUsuario = function mostraUsuario() {
-  var nome = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Diego';
-  var idade = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 18;
-  console.log(nome, idade);
-};
-
-mostraUsuario(nome, idade);
-mostraUsuario(nome); // 3.4
-
-var promise = function promise() {
-  return new Promise(function (resolve, reject) {
-    return resolve();
-  });
-};
+mostraInfos({
+  nome: 'Diego',
+  idade: 23
+});
