@@ -1,9 +1,13 @@
-function mostraInfo(usuario) {
-     return `${usuario.nome} tem ${usuario.idade} anos.`;
-    }
-    mostraInfo({ nome: 'Diego', idade: 23 })
+const arr = [1, 2, 3, 4, 5, 6]
 
-    function mostraInfos({nome,idade}){
-         console.log( nome+' tem '+idade+' anos.');
-    }
-    mostraInfos({ nome: 'Diego', idade: 23 });
+const [x, ...y] = arr;
+
+console.log(x); // 1
+console.log(y); // [2, 3, 4, 5, 6]
+
+function soma(...params){
+     return params.reduce((total,next)=>total + next);
+}
+
+console.log(soma(1, 2, 3, 4, 5, 6)); // 21
+console.log(soma(1, 2)); // 3

@@ -1,21 +1,22 @@
 "use strict";
 
-function mostraInfo(usuario) {
-  return "".concat(usuario.nome, " tem ").concat(usuario.idade, " anos.");
+var arr = [1, 2, 3, 4, 5, 6];
+var x = arr[0],
+    y = arr.slice(1);
+console.log(x); // 1
+
+console.log(y); // [2, 3, 4, 5, 6]
+
+function soma() {
+  for (var _len = arguments.length, params = new Array(_len), _key = 0; _key < _len; _key++) {
+    params[_key] = arguments[_key];
+  }
+
+  return params.reduce(function (total, next) {
+    return total + next;
+  });
 }
 
-mostraInfo({
-  nome: 'Diego',
-  idade: 23
-});
+console.log(soma(1, 2, 3, 4, 5, 6)); // 21
 
-function mostraInfos(_ref) {
-  var nome = _ref.nome,
-      idade = _ref.idade;
-  console.log(nome + ' tem ' + idade + ' anos.');
-}
-
-mostraInfos({
-  nome: 'Diego',
-  idade: 23
-});
+console.log(soma(1, 2)); // 3
