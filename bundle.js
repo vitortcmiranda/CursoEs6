@@ -13,15 +13,23 @@ var usuarios = [{
   idade: 30,
   empresa: 'Facebook'
 }];
-var UtilizandoMap = usuarios.map(function (item, index) {
-  return usuarios[index].idade;
+var UtilizandoMap = usuarios.map(function (usuarios) {
+  return usuarios.idade;
 });
-var filter = usuarios.filter(function (item, index) {
-  return usuarios[index].idade > 18;
+var filter = usuarios.filter(function (usuarios) {
+  return usuarios.idade > 18;
 });
-var find = usuarios.find(function (item, index) {
-  return usuarios[index].empresa === 'Google';
+var find = usuarios.find(function (usuarios) {
+  return usuarios.empresa === 'Google';
 });
-var multiplincando = console.log('Utilizando Map', UtilizandoMap);
+var multiplincando = usuarios.map(function (usuarios) {
+  return usuarios.idade * 2;
+});
+var filterm = multiplincando.filter(function (multiplincando) {
+  return multiplincando < 50;
+});
+console.log('Utilizando Map', UtilizandoMap);
 console.log('Utilizando filter', filter);
 console.log('Utilizando find', find);
+console.log('Utilizando mu', multiplincando);
+console.log('Utilizando mu', filterm);
