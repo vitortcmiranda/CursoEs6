@@ -1,3 +1,8 @@
+import apiLaravel from './apiLaravel';
+import api from './api';
+
+
+
 class App{
     constructor(){
         this.repositories = [];
@@ -38,7 +43,7 @@ class App{
 
             let linkEl = document.createElement('a');
             linkEl.setAttribute('target','_blank');
-            linkEl.setAttribute('href',html_url);
+            linkEl.setAttribute('href',repo.html_url);
             linkEl.appendChild(document.createTextNode('Acessar'));
 
             let listItemEl = document.createElement('li');
@@ -53,5 +58,5 @@ class App{
         });
     }
 }
-
+console.log(apiLaravel.get);
 new App();
