@@ -17,6 +17,16 @@ class App{
         this.formEl.onsubmit = event => this.addRepository(event);
     }
 
+    setLoading(loading = true){
+        if(loading === true){
+            let loading = document.querySelector('button[name=buscar]');
+            loading.setAttribute("disabled", "disabled");
+        }else{
+            let buscarEl = document.getElementById('buscar');
+            console.log('asdasdasdasd');
+        }
+    }
+
     async addRepository(event){
         event.preventDefault();
 
@@ -25,9 +35,10 @@ class App{
         
         //preventDefault previne que o form recarregue a página como envio do post
 
-        if(repoInput.length === 0){ console.log('teste');};
-        
+        if(repoInput.length === 0){ return};
        
+        
+       this.setLoading();
        try {const response = await api.get(`${repoInput}/repos`);
         
         //Usando desestruturação
@@ -46,6 +57,7 @@ class App{
     }catch(err){
         alert('O repositório não existe');
     }
+    this.setLoading(false);
     }
     render(){
        if(this.listEl){this.listEl.innerHTML='';}
