@@ -27,8 +27,8 @@ class App{
 
         if(repoInput.length === 0){ console.log('teste');};
         
-
-        const response = await api.get(`${repoInput}/repos`);
+       
+       try {const response = await api.get(`${repoInput}/repos`);
         
         //Usando desestruturação
         response.data.forEach(element => {
@@ -42,14 +42,10 @@ class App{
             });
             
         });
-        /*
-        this.repositories.push({
-            name,
-            full_name,
-            avatar_url,
-            html_url,
-        }); */
         this.render();
+    }catch(err){
+        alert('O repositório não existe');
+    }
     }
     render(){
        if(this.listEl){this.listEl.innerHTML='';}
