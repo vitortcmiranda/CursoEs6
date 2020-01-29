@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const apiLaravel = axios.create({
-    baseURL:'https://api.github.com'
+const api = axios.create({
+    baseURL:'http://api.github.com/users/'
 })
+
+export default api;
 
