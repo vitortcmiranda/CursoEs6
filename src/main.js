@@ -20,7 +20,8 @@ class App{
     setLoading(loading = true){
         if(loading === true){
             let loading = document.querySelector('button[name=buscar]');
-            loading.setAttribute("disabled", "disabled");
+            //loading.setAttribute("disabled", "disabled");
+            alert('Procurando repositório');
         }else{
             let buscarEl = document.getElementById('buscar');
             console.log('asdasdasdasd');
