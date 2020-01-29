@@ -27,24 +27,33 @@ class App{
 
         if(repoInput.length === 0){ console.log('teste');};
         
-        console.log(repoInput);
 
         const response = await api.get(`${repoInput}/repos`);
-        const newArr = response;
+        
+        //Usando desestruturação
         response.data.forEach(element => {
-            console.log(`Nome do repositorio: ${element.name} link para acessar: ${element.html_url}`);
+            const{name, full_name,html_url, owner:{avatar_url}} = element;
+
+            this.repositories.push({
+                name,
+                full_name,
+                avatar_url,
+                html_url,
+            });
+            
         });
-        console.log(response.data);
+        /*
         this.repositories.push({
-            name:'Vitor',
-            description:'Dev',
-            avatar_url:'https://avatars1.githubusercontent.com/u/37985642?s=460&v=4',
-            html_url:'https://github.com/vitortcmiranda/CursoEs6'
-        });
+            name,
+            full_name,
+            avatar_url,
+            html_url,
+        }); */
         this.render();
     }
     render(){
-        this.listEl.innerHTML='';
+       if(this.listEl){this.listEl.innerHTML='';}
+        
 
         this.repositories.forEach(repo =>{
             let imgEl = document.createElement('img');
@@ -52,9 +61,9 @@ class App{
 
             let titleEl = document.createElement('strong');
             titleEl.appendChild(document.createTextNode(repo.name));
-
-            let descriptionEl = document.createElement('p');
-            descriptionEl.appendChild(document.createTextNode(repo.description))
+           
+            let full_nameEl = document.createElement('p');
+            full_nameEl.appendChild(document.createTextNode(repo.full_name))
 
             let linkEl = document.createElement('a');
             linkEl.setAttribute('target','_blank');
@@ -64,12 +73,12 @@ class App{
             let listItemEl = document.createElement('li');
             listItemEl.appendChild(imgEl);
             listItemEl.appendChild(titleEl);
-            listItemEl.appendChild(descriptionEl);
+            listItemEl.appendChild(full_nameEl);
             listItemEl.appendChild(linkEl);
 
             this.listEl.appendChild(listItemEl);
 
-
+          
         });
     }
 }
